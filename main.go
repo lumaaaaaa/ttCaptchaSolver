@@ -131,11 +131,10 @@ func processCaptcha() {
 	fmt.Print("[⚙️] calculating humanized captcha data...")
 
 	startTime := time.Now()
-	time.Sleep(200 * time.Millisecond)
+	time.Sleep(1000 * time.Millisecond)
 
 	// Linear calculation for 'Reply'
 	for iterations := 1; iterations <= puzzleX+40; iterations++ {
-		time.Since(startTime)
 		c := struct {
 			X            int `json:"x"`
 			Y            int `json:"y"`
@@ -176,7 +175,7 @@ func submitCaptcha() {
 		}*/
 	} else {
 		fmt.Println("\r[❌️] submitting captcha to TikTok... failed!")
-		fmt.Println("[❌️] Error: " + string(body))
+		fmt.Println("[❌️] error: " + string(body))
 	}
 }
 
